@@ -740,11 +740,7 @@ sysbench是一款开源的多线程性能测试工具，可以执行CPU/内存/�
 
 l 下载安装sysbench
 
-登陆[http://sourceforge.net/网站搜索sysbench进行下载，如图9，图10](http://sourceforge.net/网站搜索sysbench进行下载，如图9，图10)
-
-图9
-
-图10
+登陆[http://sourceforge.net/网站搜索sysbench进行下载，](http://sourceforge.net/网站搜索sysbench进行下载，如图9，图10)
 
 l 安装sysbench
 
