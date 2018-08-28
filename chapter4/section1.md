@@ -20,9 +20,11 @@ tcpcopy 架构
 
 tcpcopy运行需要intercept的支持，tcpcopy负责抓包和发包工作，而intercept负责截获应答包
 
-
-
 它的数据流转和部署架构如下图：
 
 ![](/assets/intercept.png)
+
+具体的生产环境和镜像环境数据传递流程图如下：
+
+![](/assets/tcpcopyonline.png)
 
