@@ -44,3 +44,13 @@ TCPcopy 从数据链路层 copy 端口请求，然后更改目的 ip 和目的�
 
 过滤相关信息将请求状态发送给 online server 的 tcpcopy，关闭 tcp 连接。
 
+对于tcpcopy，configure的时候加上--offline 
+
+--offline replay TCP streams from the pcap file 
+
+执行的时候，加上-i参数，用来指定pcap文件地址 
+
+对于intercept，不用变化
+
+
+
