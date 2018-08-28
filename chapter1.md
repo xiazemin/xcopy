@@ -62,7 +62,7 @@ tcpcopy架构已历经三代，基本原理都一样，本质是利用在线数�
 
 第二种架构，也就是目前开源的架构，设计也是tcpcopy鼻祖王波同学设计（2010年设计出来，2011.6月设计移交给多人,包括我），大致架构如下：
 
-![](https://img-blog.csdn.net/20130826181701734?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuZ2JpbjU3OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![](/assets/tcpcopy2.png)
 
 从上面图中我们可以看出，tcpcopy默认从IP层抓包，从IP层发包，与第一种架构不同的是，我们在测试服务器进行响应包的截获，并通过intercept程序返回响应包的必要信息给tcpcopy。这种架构为分布式压力测试提供了可能性，相比第一种架构，大大推动了tcpcopy的进化。
 
@@ -100,7 +100,7 @@ tcpcopy架构已历经三代，基本原理都一样，本质是利用在线数�
 
 第三种架构，如下图：
 
-![](https://img-blog.csdn.net/20130826181707593?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2FuZ2JpbjU3OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![](/assets/tcpcopy3.png)
 
 上述架构，也即最新架构，是为了极限测试的目的而设计的，把intercept的工作从测试服务器（test server）中offload出来，放到另外一台独立的辅助服务器（assistant server，原则上一定要用同网段的一台闲置的服务器来充当辅助服务器）上面进行截获响应包，而且把原先从IP层捕获响应数据包的工作转移到从数据链路层抓响应包，这些改变大大降低了对测试机器的各种干扰（除了路由设置，其它已经没有影响了），而且大大扩大了捕获响应包的能力。当然这种测试也更加真实。
 
