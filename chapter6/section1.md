@@ -8,6 +8,8 @@
 
 这个就是通过libpcap库来实现的，tcpdump调用libpcap的api函数，由libpcap进入到内核态到链路层来抓包,如下图。图中的BPF是过滤器，可以根据用户设置用于数据包过滤减少应用程序的数据包的包数和字节数从而提高性能。BufferQ是缓存供应用程序读取的数据包。我们可以说tcpdump底层原理其实就是libpcap的实现原理。
 
+![](/assets/libpcab2.png)
+
 而libpcap在linux系统链路层中抓包是通过PF\_PACKET套接字来实现的\(不同的系统其实现机制是由差异的\)，该方法在创建的时候，可以指定第二参数为SOCK\_DGRAM或者SOCK\_RAW，影响是否扣除链路层的首部。
 
 ```
