@@ -28,3 +28,19 @@ tcpcopy运行需要intercept的支持，tcpcopy负责抓包和发包工作，而
 
 ![](/assets/tcpcopyonline.png)
 
+TCPcopy 从数据链路层 copy 端口请求，然后更改目的 ip 和目的端口。
+
+将修改过的数据包传送给数据链路层，并且保持 tcp 连接请求。
+
+通过数据链路层从 online server 发送到 test server。
+
+在数据链路层解封装后到达 nginx 响应的服务端口。
+
+等用户请求的数据返回结果后，回包走数据链路层。
+
+通过数据链路层将返回的结果从 test server 发送到 assistant server。注：test server 只有一条默认路由指向 assistant server。
+
+数据到达 assistant server 后被 intercept 进程截获。
+
+过滤相关信息将请求状态发送给 online server 的 tcpcopy，关闭 tcp 连接。
+
